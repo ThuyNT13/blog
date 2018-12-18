@@ -9,6 +9,7 @@ class PostsList extends Component {
   }
 
   render() {
+    console.log(this.props.posts)
     return(
       <section>
         PostsLists
@@ -18,6 +19,7 @@ class PostsList extends Component {
 }
 
 const mapStateToProps = (state) => {
+  return { posts: state.posts };
 }
 
-export default connect(null, { fetchPosts: fetchPosts })(PostsList);
+export default connect(mapStateToProps, { fetchPosts: fetchPosts })(PostsList);

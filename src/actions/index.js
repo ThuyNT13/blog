@@ -8,7 +8,8 @@ export const fetchPosts = () => {
   
     // return inner function when there's no object
     dispatch({ 
-      type: 'FETCH_POSTS', payload: response
+      type: 'FETCH_POSTS', 
+      payload: response.data
     })
   }
 };
