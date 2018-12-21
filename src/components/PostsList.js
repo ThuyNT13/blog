@@ -5,11 +5,14 @@ import { fetchPosts } from '../actions';
 
 class PostsList extends Component {
   componentDidMount() {
+    // console.log(this.props.fetchPosts()); // PromiseStatus: resolved
     this.props.fetchPosts();
   }
 
   renderList() {
+    // console.log(this.props.posts[0]); // prints first post, id:1
     return this.props.posts.map((post) => {
+      // console.log(post); // iterates through posts and prints each post
       return(
         <div className="item" key={post.id}>
           <i className="large middle aligned icon user"/>
@@ -25,7 +28,6 @@ class PostsList extends Component {
   }
 
   render() {
-    console.log(this.props.posts)
     return(
       <section className="ui relaxed divided list">
         {this.renderList()}
